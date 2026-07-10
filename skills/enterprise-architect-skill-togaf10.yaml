@@ -1,0 +1,303 @@
+# Enterprise Architecture Document Evolution Skill - TOGAF 10th Edition
+# Version: 1.0
+# Framework: TOGAF 10th Edition
+# Created: 2026-07-10
+
+metadata:
+  skill_name: "Enterprise Architecture Document Evolution"
+  version: "1.0"
+  togaf_version: "10th Edition"
+  domain: "Enterprise Architecture"
+  description: "Evolve enterprise architecture documents following TOGAF 10 standards with governance, security, and compliance alignment"
+  created: "2026-07-10"
+
+# ============================================================================
+# TOGAF 10 FRAMEWORK CONTEXT
+# ============================================================================
+togaf_10_updates:
+  key_changes:
+    - "Simplified ADM phases for faster iteration"
+    - "Enhanced focus on value streams"
+    - "Improved change management integration"
+    - "Strengthened security architecture"
+    - "Better cloud and agile integration"
+  phases_covered:
+    - "A: Architecture Vision"
+    - "B: Business Architecture"
+    - "C: Information Systems Architecture"
+    - "D: Technology Architecture"
+    - "E: Opportunities and Solutions"
+    - "F: Migration Planning"
+    - "G: Implementation Governance"
+    - "H: Architecture Change Management"
+
+# ============================================================================
+# INPUT PARAMETERS
+# ============================================================================
+inputs:
+  required:
+    - current_document:
+        type: "string or URL"
+        description: "Current architecture document (content or link)"
+        
+    - improvement_scope:
+        type: "list"
+        description: "Areas requiring improvement"
+        
+  optional:
+    - target_audience:
+        type: "string"
+        default: "Technical & Executive Leadership"
+    - compliance_standards:
+        type: "list"
+        default: ["ISO 27001", "SOC 2"]
+    - export_format:
+        type: "string"
+        default: "DOCX"
+        options: ["DOCX", "PDF", "Markdown"]
+
+# ============================================================================
+# INDUSTRY CONTEXT
+# ============================================================================
+context:
+  industry: "Mining & Industrial Operations"
+  systems: 
+    - AVEVA PI System (historian and analytics)
+    - AVEVA Production Managment (Ampla) (Performance, Downtime and Inventory modules)
+    - AVEVA Production Accounting (Reconciliation)
+    - AVEVA Mobile Operator (Procedures)
+    - AVEVA Predictive Analytics 
+    - AVEVA Unified Supply Chain (Spiral)
+    - AVEVA CONNECT (Enterprise Visualization)
+    - SAP (ERP - Enterprise Resource Planning
+    - Sandvik (FMS – Fleet Managemnt System)
+    - 3PL (Container Logistics System)
+    - LIMS (Laboratory Information Management)
+    - Sandvik AutoMine
+    - Emerson / ABB / Rockwell DCS
+  integration_protocols:
+    - OPC UA (real-time industrial data - PREFERRED)
+    - Modbus (legacy equipment)
+    - REST APIs (cloud integration)
+  naming_standard: "[System]_[Component]_[Function]_[Version]"
+
+# ============================================================================
+# OUTPUT DOCUMENT STRUCTURE (TOGAF 10)
+# ============================================================================
+output_sections:
+  
+  - section: "1. Executive Summary"
+    requirements:
+      - Business objectives and drivers
+      - Key architectural decisions
+      - Expected value and benefits
+      - Timeline
+    length: "1 page"
+    
+  - section: "2. Architecture Vision (Phase A)"
+    requirements:
+      - Vision statement
+      - Business scenarios
+      - Stakeholder analysis
+      - Architecture principles
+    togaf_10: "Maps to TOGAF Phase A"
+    
+  - section: "3. Business Architecture (Phase B)"
+    requirements:
+      - Organization structure
+      - Business processes
+      - Goals and strategic drivers
+      - Value streams
+    togaf_10: "Maps to TOGAF Phase B"
+    
+  - section: "4. Information Systems Architecture (Phase C)"
+    requirements:
+      - Applications and data systems
+      - Data architecture
+      - System interactions
+      - Data flows
+    togaf_10: "Maps to TOGAF Phase C"
+    include_diagrams: true
+    
+  - section: "5. Technology Architecture (Phase D)"
+    requirements:
+      - Technology stack
+      - Infrastructure components
+      - Platform specifications
+      - Infrastructure sizing
+      - Performance SLAs
+    togaf_10: "Maps to TOGAF Phase D"
+    tables_required: true
+    
+  - section: "6. Data Integration Architecture"
+    requirements:
+      - Integration protocols (OPC UA, Modbus, APIs)
+      - Data sources and flows
+      - Quality and validation
+      - Master data management
+    include_diagrams: true
+    
+  - section: "7. Governance Framework (Phase G)"
+    requirements:
+      - Organizational structure and roles
+      - Architecture Review Board (ARB) charter
+      - Decision authority matrix
+      - Change management process
+      - Information standards:
+        - Asset hierarchy
+        - Naming conventions
+        - Data classification
+        - Metadata requirements
+    togaf_10: "Maps to TOGAF Phase G - Implementation Governance"
+    
+  - section: "8. Security & Compliance Architecture"
+    requirements:
+      - Security governance model
+      - Identity and access management (IAM)
+      - Data protection and encryption
+      - Network security
+      - Compliance requirements (ISO 27001, SOC 2)
+      - Risk assessment
+    compliance_required: true
+    
+  - section: "9. Migration Planning (Phase F)"
+    requirements:
+      - Implementation sequence
+      - Phased approach with timelines
+      - Dependencies and risks
+      - Resource requirements
+    togaf_10: "Maps to TOGAF Phase F - Migration Planning"
+    
+  - section: "10. Implementation Roadmap (Phase G)"
+    requirements:
+      - Project phases and timelines
+      - Success metrics and KPIs
+      - Risk mitigation
+      - Governance structure
+    timeline_format: true
+    
+  - section: "11. Standards & References"
+    requirements:
+      - TOGAF 10 alignment
+      - Architecture standards
+      - Data governance policies
+      - Security policies
+      - Integration patterns
+
+# ============================================================================
+# QUALITY STANDARDS
+# ============================================================================
+quality_checks:
+  - TOGAF 10 ADM alignment verified
+  - All 8 phases (A-H) addressed
+  - Security section complete
+  - Compliance requirements mapped
+  - Data flows clearly documented
+  - Infrastructure sizing realistic
+  - Governance structure defined
+  - No undefined acronyms
+  - Version metadata included
+  - Professional formatting applied
+
+# ============================================================================
+# PROCESSING RULES
+# ============================================================================
+processing_rules:
+  
+  must_include:
+    - TOGAF 10 ADM phases (A through H)
+    - Architecture principles aligned to TOGAF
+    - Security governance model
+    - Compliance mapping (ISO 27001, SOC 2, NIST CSF)
+    - Data classification levels
+    - Integration protocol justifications
+    - Performance and scalability
+    - Disaster recovery and business continuity
+    - Value stream analysis
+    - Change management strategy
+    
+  security_standards:
+    - Principle: "Secure by design"
+    - Encryption: AES-256 minimum
+    - Authentication: Multi-factor
+    - IAM strategy required
+    - Threat modeling summary
+    
+  data_integration:
+    - Hub-and-spoke for mining operations
+    - OPC UA preferred for real-time data
+    - Modbus for legacy systems
+    - REST APIs for cloud integration
+    - Edge computing for latency reduction
+    - Fallback mechanisms for connectivity loss
+    
+  infrastructure:
+    - Right-sized based on data volume and frequency
+    - Redundancy and failover included
+    - Network bandwidth calculated
+    - Storage: Hot (current) + Archive (historical)
+    - Monitoring and alerting strategy
+    
+  compliance_mapping:
+    - ISO 27001 controls matrix
+    - SOC 2 requirements mapping
+    - NIST Cybersecurity Framework alignment
+    - Audit trail requirements
+    - Data retention policy
+    - Privacy considerations
+
+# ============================================================================
+# WORKFLOW
+# ============================================================================
+agent_workflow:
+  step_1:
+    action: "Analyze current document"
+    checks: ["TOGAF 10 coverage", "Completeness", "Security", "Governance"]
+    
+  step_2:
+    action: "Research TOGAF 10 standards and best practices"
+    
+  step_3:
+    action: "Enhance sections based on TOGAF 10 ADM"
+    priority: ["Vision", "Governance", "Security", "Data Integration", "Infrastructure"]
+    
+  step_4:
+    action: "Validate quality standards"
+    
+  step_5:
+    action: "Export in requested format"
+    
+  step_6:
+    action: "Prepare for version control and commit"
+
+# ============================================================================
+# VERSION CONTROL
+# ============================================================================
+version_control:
+  naming_format: "[DocumentName]_v[X.Y]_[YYYY-MM-DD].ext"
+  examples:
+    - "Enterprise_Architecture_Blueprint_v1.0_2026-07-10.docx"
+    - "Governance_Framework_v1.1_2026-07-15.md"
+  commit_format: "[ARCH] DocumentName: Description (skill: enterprise-architect v1.0, TOGAF 10)"
+  examples:
+    - "[ARCH] Enterprise Blueprint: Added TOGAF 10 Phase C systems architecture (skill: enterprise-architect v1.0, TOGAF 10)"
+    - "[ARCH] Governance Framework: Established ARB per TOGAF Phase G (skill: enterprise-architect v1.0, TOGAF 10)"
+
+# ============================================================================
+# TOGAF 10 REFERENCE
+# ============================================================================
+togaf_10_phases:
+  phase_a: "Architecture Vision - Define scope and objectives"
+  phase_b: "Business Architecture - Model business processes and value streams"
+  phase_c: "Information Systems Architecture - Design applications and data"
+  phase_d: "Technology Architecture - Define technology components and infrastructure"
+  phase_e: "Opportunities and Solutions - Identify implementation opportunities"
+  phase_f: "Migration Planning - Plan transition between architectures"
+  phase_g: "Implementation Governance - Manage architecture implementation"
+  phase_h: "Architecture Change Management - Manage ongoing change"
+  
+  skill_alignment:
+    - "This skill covers all 8 TOGAF 10 phases"
+    - "Each document section maps to specific phase(s)"
+    - "Ensures TOGAF 10 compliance and completeness"
+
