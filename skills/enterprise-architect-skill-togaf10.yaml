@@ -70,11 +70,11 @@ context:
     - AVEVA Unified Supply Chain (Spiral)
     - AVEVA CONNECT (Enterprise Visualization)
     - SAP (ERP - Enterprise Resource Planning
-    - Sandvik (FMS – Fleet Managemnt System)
-    - 3PL (Container Logistics System)
+    - Sandvik OptMine (FMS – Fleet Managemnt System)
+    - 4PL (Container Logistics System)
     - LIMS (Laboratory Information Management)
     - Sandvik AutoMine
-    - Emerson / ABB / Rockwell DCS
+    - Emerson Delta V / ABB SCADA/ Rockwell DCS / GeoTab / Power Managment System
   integration_protocols:
     - OPC UA (real-time industrial data - PREFERRED)
     - Modbus (legacy equipment)
